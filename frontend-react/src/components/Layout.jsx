@@ -1,4 +1,5 @@
 import React, { Component, useEffect } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 class Layout extends Component {
   //const [show, setShow] = useState(false);
@@ -150,7 +151,7 @@ class Layout extends Component {
         </nav>
 
         <aside className="main-sidebar sidebar-light-navy elevation-2">
-          <a href="index3.html" className="brand-link">
+          <Link to={`/`} className="brand-link">
             <img
               src="/src/assets/dist/img/AdminLTELogo.png"
               alt="AdminLTE Logo"
@@ -160,22 +161,18 @@ class Layout extends Component {
             <span className="brand-text font-weight-light">
               INVENTARIO UAJMS
             </span>
-          </a>
+          </Link>
 
           <div className="sidebar">
             <div className="user-panel mt-3 pb-3 mb-3 d-flex">
               <div className="image">
                 <img
                   src="/src/assets/dist/img/user2-160x160.jpg"
-                  className="img-circle elevation-1"
+                  className="img-circle"
                   alt="User Image"
                 />
               </div>
-              <div className="info">
-                <a href="#" className="d-block">
-                  Chikilin Garcia Moya
-                </a>
-              </div>
+              <div className="info">Chikilin Garcia Moya</div>
             </div>
 
             <div className="form-inline">
@@ -202,35 +199,36 @@ class Layout extends Component {
                 data-accordion="false"
               >
                 <li className="nav-header">EXAMPLES</li>
+                <li className="nav-item">
+                  <Link to={`/`} className="nav-link">
+                    <i className="nav-icon fas fa-home"></i>
+                    <p>Dashboard</p>
+                  </Link>
+                </li>
                 <li className="nav-item menu-open">
                   <a href="#" className="nav-link active">
                     <i className="nav-icon fas fa-tachometer-alt"></i>
                     <p>
-                      Dashboard
+                      Home
                       <i className="right fas fa-angle-left"></i>
                     </p>
                   </a>
                   <ul className="nav nav-treeview">
                     <li className="nav-item">
-                      <a href="./index.html" className="nav-link active">
+                      <Link to={`/`} className="nav-link">
                         <i className="far fa-circle nav-icon"></i>
-                        <p>Dashboard v1</p>
-                      </a>
+                        <p>Home</p>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <a href="./index2.html" className="nav-link">
+                      <Link to={`/reactivo`} className="nav-link">
                         <i className="far fa-circle nav-icon"></i>
-                        <p>Dashboard v2</p>
-                      </a>
+                        <p>Reactivo</p>
+                      </Link>
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item">
-                  <a href="pages/widgets.html" className="nav-link">
-                    <i className="nav-icon fas fa-th"></i>
-                    <p>Widgets</p>
-                  </a>
-                </li>
+
                 <li className="nav-header">EXAMPLES</li>
                 <li className="nav-item">
                   <a href="#" className="nav-link">
@@ -264,17 +262,7 @@ class Layout extends Component {
           <div className="content-header">
             <div className="container-fluid">
               <div className="row mb-2">
-                <div className="col-sm-6">
-                  <h1 className="m-0">Dashboard</h1>
-                </div>
-                <div className="col-sm-6">
-                  <ol className="breadcrumb float-sm-right">
-                    <li className="breadcrumb-item">
-                      <a href="#">Home</a>
-                    </li>
-                    <li className="breadcrumb-item active">Dashboard v1</li>
-                  </ol>
-                </div>
+                <Outlet />
               </div>
             </div>
           </div>
