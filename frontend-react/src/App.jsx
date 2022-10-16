@@ -1,18 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import Home from './views/Home'
-
-//import './App.css'
-
+import Layout from "./components/Layout";
+import Login from "./views/Login";
+const user = true;
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className='container'>
-        <h1 className='text-danger'>Hola mundo</h1>
-        <Home />
-    </div>
-  )
+  if (user) {
+    return <Layout />;
+  } else {
+    return <Login />;
+  }
 }
 
-export default App
+export default App;
