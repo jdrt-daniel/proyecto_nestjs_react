@@ -1,24 +1,19 @@
-import React, { Component } from 'react'
-import { useState } from 'react'
-//nestJS
-import { api } from '../utils/conections'
+import React, { useState } from "react";
 
-export default class Home extends Component {
-  
-  getService = async () => {
-    const data = await api.get('/')
-    console.log(data);
-  }
+export default function Home() {
+  /** reactive constats */
+  const [count, setCount] = useState(0);
 
-  
-  render() {
-    return (
-      <div>Home View chikilin
-        <button onClick={ this.getService } >
-          Click para el evento
-        </button>
+  /** functions */
+  const getService = () => {
+    setCount(count + 1);
+  };
 
-      </div>
-    )
-  }
+  return (
+    <div>
+      Home View chikilin
+      <button onClick={getService}>Click para el evento</button>
+      <h1>{count}</h1>
+    </div>
+  );
 }
