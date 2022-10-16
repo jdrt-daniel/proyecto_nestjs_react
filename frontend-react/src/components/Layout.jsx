@@ -4,21 +4,30 @@ class Layout extends Component {
   //const [show, setShow] = useState(false);
   constructor(props) {
     super(props);
-    this.state = { show: false };
+    this.state = { show: true };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ show: false });
+    }, 1000);
   }
 
   render() {
+    const show = this.state.show;
     return (
       <div className="wrapper">
-        <div className="preloader flex-column justify-content-center align-items-center">
-          <img
-            className="animation__shake"
-            src="/src/assets/dist/img/AdminLTELogo.png"
-            alt="AdminLTELogo"
-            height="60"
-            width="60"
-          />
-        </div>
+        {show && (
+          <div className="preloader flex-column justify-content-center align-items-center">
+            <img
+              className="animation__shake"
+              src="/src/assets/dist/img/AdminLTELogo.png"
+              alt="AdminLTELogo"
+              height="60"
+              width="60"
+            />
+          </div>
+        )}
 
         <nav className="main-header navbar navbar-expand navbar-dark bg-navy text-white">
           <ul className="navbar-nav">
