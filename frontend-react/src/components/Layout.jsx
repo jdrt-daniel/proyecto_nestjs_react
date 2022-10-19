@@ -217,13 +217,61 @@ class Layout extends Component {
                     <li className="nav-item">
                       <Link to={`/`} className="nav-link">
                         <i className="far fa-circle nav-icon"></i>
-                        <p>Home</p>
+                        <p>Material</p>
                       </Link>
                     </li>
                     <li className="nav-item">
                       <Link to={`/reactivo`} className="nav-link">
                         <i className="far fa-circle nav-icon"></i>
                         <p>Reactivo</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to={`/reactivo`} className="nav-link">
+                        <i className="far fa-circle nav-icon"></i>
+                        <p>Unidad Medida</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to={`/reactivo`} className="nav-link">
+                        <i className="far fa-circle nav-icon"></i>
+                        <p>Subgrupo</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to={`/reactivo`} className="nav-link">
+                        <i className="far fa-circle nav-icon"></i>
+                        <p>Proveedor</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to={`/reactivo`} className="nav-link">
+                        <i className="far fa-circle nav-icon"></i>
+                        <p>Ingresos</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to={`/reactivo`} className="nav-link">
+                        <i className="far fa-circle nav-icon"></i>
+                        <p>Egresos</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to={`/reactivo`} className="nav-link">
+                        <i className="far fa-circle nav-icon"></i>
+                        <p>Tipo almacen</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to={`/reactivo`} className="nav-link">
+                        <i className="far fa-circle nav-icon"></i>
+                        <p>Almancen</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to={`/reactivo`} className="nav-link">
+                        <i className="far fa-circle nav-icon"></i>
+                        <p>Pedido</p>
                       </Link>
                     </li>
                   </ul>
