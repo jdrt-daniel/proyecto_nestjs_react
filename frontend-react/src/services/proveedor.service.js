@@ -18,17 +18,17 @@ export const proveedorService = () => {
       throw error;
     }
   };
-  const saveData = async (data) => {
+  const saveData = async (dataSend) => {
     try {
-      const { data } = await api.post("/proveedor", data);
+      const { data } = await api.post("/proveedor", dataSend);
       return data;
     } catch (error) {
       throw error;
     }
   };
-  const updateData = async (data) => {
+  const updateData = async (dataSend) => {
     try {
-      const { data } = await api.put("/proveedor", data);
+      const { data } = await api.put("/proveedor", dataSend);
       return data;
     } catch (error) {
       throw error;
@@ -37,5 +37,8 @@ export const proveedorService = () => {
 
   return {
     getAllData,
+    getData,
+    saveData,
+    updateData,
   };
 };
