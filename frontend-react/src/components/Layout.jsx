@@ -22,7 +22,7 @@ class Layout extends Component {
           <div className="preloader flex-column justify-content-center align-items-center">
             <img
               className="animation__shake"
-              src="/src/assets/dist/img/AdminLTELogo.png"
+              src="/src/assets/img/AdminLTELogo.png"
               alt="AdminLTELogo"
               height="60"
               width="60"
@@ -123,7 +123,7 @@ class Layout extends Component {
             <li className="nav-item dropdown">
               <a className="nav-link" data-toggle="dropdown" href="#">
                 <img
-                  src="/src/assets/dist/img/user2-160x160.jpg"
+                  src="/src/assets/img/user2-160x160.jpg"
                   className="img-circle"
                   alt="User Image"
                   width={30}
@@ -153,7 +153,7 @@ class Layout extends Component {
         <aside className="main-sidebar sidebar-light-navy elevation-2">
           <Link to={`/`} className="brand-link">
             <img
-              src="/src/assets/dist/img/AdminLTELogo.png"
+              src="/src/assets/img/AdminLTELogo.png"
               alt="AdminLTE Logo"
               className="brand-image img-circle elevation-1"
               // style="opacity: .8"
@@ -167,7 +167,7 @@ class Layout extends Component {
             <div className="user-panel mt-3 pb-3 mb-3 d-flex">
               <div className="image">
                 <img
-                  src="/src/assets/dist/img/user2-160x160.jpg"
+                  src="/src/assets/img/user2-160x160.jpg"
                   className="img-circle"
                   alt="User Image"
                 />
