@@ -44,57 +44,107 @@ export class Reactivo extends Component {
         <div className="col-sm-6">
           <h1 className="m-0">Reactivo</h1>
         </div>
-        <div className="col-sm-6">
-          <ol className="breadcrumb float-sm-right">
-            <li className="breadcrumb-item">
-              <a>Reactivo</a>
-            </li>
-            <li className="breadcrumb-item active">Lista de proveedores</li>
-          </ol>
-        </div>
-        <div className="col-12 p-2">
-          <div className="card">
-            <div className="card-body">
-              <div>
-                Lista de proveedores
-                <button
-                  className="btn btn-success float-right"
-                  data-toggle="modal"
-                  data-target="#modal-default"
-                >
-                  <i className="fa fa-plus mr-2"></i>
-                  Agregar
-                </button>
+        <div className="row p-2 col-12">
+          <div className="col-12">
+            <div className="card ">
+              <div className="card-header">
+                <h3 className="card-title">Lista de proveedores</h3>
+
+                <div className="card-tools">
+                  <div className="input-group input-group-sm">
+                    <input
+                      type="text"
+                      name="table_search"
+                      className="form-control float-right"
+                      placeholder="Buscar..."
+                    />
+
+                    <div className="input-group-append">
+                      <button type="submit" className="btn btn-default">
+                        <i className="fas fa-search"></i>
+                      </button>
+                    </div>
+                    <button
+                      className="btn btn-success float-right btn-sm ml-3"
+                      data-toggle="modal"
+                      data-target="#modal-default"
+                    >
+                      <i className="fa fa-plus mr-2"></i>
+                      Agregar
+                    </button>
+                  </div>
+                </div>
               </div>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Estado</th>
-                    <th>actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {lista.map((el, index) => {
-                    return (
-                      <tr key={index}>
-                        <td> {el.id} </td>
-                        <td> {el.nombre} </td>
-                        <td> {el.estado ? "Activo" : "Inactivo"} </td>
-                        <td>
-                          <button className="btn btn-primary mr-2">Edit</button>
-                          <button className="btn btn-danger">Del</button>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+
+              <div className="card-body table-responsive p-0">
+                <table className="table table-hover text-nowrap table-sm">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Nombre</th>
+                      <th>Estado</th>
+                      <th style={{ width: "40px" }}>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {lista.map((el, index) => {
+                      return (
+                        <tr>
+                          <td>{index + 1}</td>
+                          <td>{el.nombre}</td>
+                          <td>
+                            {el.estado ? (
+                              <span class="badge bg-success">Activo</span>
+                            ) : (
+                              <span class="badge bg-secondary">Inactivo</span>
+                            )}
+                          </td>
+                          <td>
+                            <a href="">
+                              <i className="fas fa-edit text-dark mr-3"></i>
+                            </a>
+                            <a href="">
+                              <i className="fas fa-trash text-danger"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+              <div className="card-footer clearfix">
+                <ul className="pagination pagination-sm m-0 float-right">
+                  <li className="page-item">
+                    <a className="page-link" href="#">
+                      &laquo;
+                    </a>
+                  </li>
+                  <li className="page-item">
+                    <a className="page-link" href="#">
+                      1
+                    </a>
+                  </li>
+                  <li className="page-item">
+                    <a className="page-link" href="#">
+                      2
+                    </a>
+                  </li>
+                  <li className="page-item">
+                    <a className="page-link" href="#">
+                      3
+                    </a>
+                  </li>
+                  <li className="page-item">
+                    <a className="page-link" href="#">
+                      &raquo;
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-
         <div className="modal fade" id="modal-default">
           <div className="modal-dialog modal-center">
             <form onSubmit={this.handleSubmit}>
