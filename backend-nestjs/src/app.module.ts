@@ -5,8 +5,6 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProveedorModule } from './proveedor/proveedor.module';
 import { RolModule } from './rol/rol.module';
-import { MaterialModule } from './material/material.module';
-import { UnidadModule } from './unidad/unidad.module';
 
 @Module({
   imports: [
@@ -21,9 +19,7 @@ import { UnidadModule } from './unidad/unidad.module';
       autoLoadEntities: true
     }),
     ProveedorModule,
-    RolModule,
-    MaterialModule,
-    UnidadModule
+    RolModule
   ],
   controllers: [AppController],
   providers: [AppService]
