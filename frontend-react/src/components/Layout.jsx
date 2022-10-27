@@ -215,7 +215,7 @@ class Layout extends Component {
                   </a>
                   <ul className="nav nav-treeview">
                     <li className="nav-item">
-                      <Link to={`/`} className="nav-link">
+                      <Link to={`/material`} className="nav-link">
                         <i className="far fa-circle nav-icon"></i>
                         <p>Material</p>
                       </Link>
@@ -239,7 +239,7 @@ class Layout extends Component {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link to={`/reactivo`} className="nav-link">
+                      <Link to={`/proveedor`} className="nav-link">
                         <i className="far fa-circle nav-icon"></i>
                         <p>Proveedor</p>
                       </Link>

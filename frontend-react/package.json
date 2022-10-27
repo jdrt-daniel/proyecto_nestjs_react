@@ -15,7 +15,9 @@
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
-    "simple-react-validator": "^1.6.2"
+    "sass": "^1.55.0",
+    "simple-react-validator": "^1.6.2",
+    "sweetalert2": "^11.6.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

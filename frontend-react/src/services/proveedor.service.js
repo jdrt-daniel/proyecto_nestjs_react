@@ -35,10 +35,20 @@ export const proveedorService = () => {
     }
   };
 
+  const deleteData = async (id) => {
+    try {
+      const { data } = await api.delete(`/proveedor/${id}`);
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
   return {
     getAllData,
     getData,
     saveData,
     updateData,
+    deleteData,
   };
 };

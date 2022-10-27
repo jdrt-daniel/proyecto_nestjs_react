@@ -1,6 +1,9 @@
 import React, { Component, useState, useEffect } from "react";
 import { proveedorService } from "../services/proveedor.service";
-const { getAllData, getData, saveData, updateData } = proveedorService();
+import Swal from "sweetalert2";
+
+const { getAllData, getData, saveData, updateData, deleteData } =
+  proveedorService();
 
 export class Reactivo extends Component {
   constructor(props) {
@@ -19,6 +22,7 @@ export class Reactivo extends Component {
 
   closeModal() {
     this.setState({ nombre: "" });
+    console.log("entrando a la funcion");
     $("#modal-default").modal("toggle");
   }
 
@@ -32,6 +36,31 @@ export class Reactivo extends Component {
   async onGetDataList() {
     const data = await getAllData();
     this.setState({ lista: data });
+  }
+
+  handleStateConfirm(id) {
+    console.log(id);
+    Swal.fire({
+      title: "Dar de baja?",
+      text: "Se dará de baja este registro.",
+      icon: "error",
+      confirmButtonText: "Si, inhabilitar",
+      confirmButtonColor: "#cf2525",
+      cancelButtonText: "Cancelar",
+      showCancelButton: true,
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await deleteData(id);
+        await this.onGetDataList();
+        Swal.fire({
+          icon: "success",
+          title: "Correcto¡",
+          text: "Acción realizada con exito",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
   }
 
   async componentDidMount() {
@@ -89,21 +118,29 @@ export class Reactivo extends Component {
                   <tbody>
                     {lista.map((el, index) => {
                       return (
-                        <tr>
+                        <tr key={index}>
                           <td>{index + 1}</td>
                           <td>{el.nombre}</td>
                           <td>
                             {el.estado ? (
-                              <span class="badge bg-success">Activo</span>
+                              <span className="badge bg-success">Activo</span>
                             ) : (
-                              <span class="badge bg-secondary">Inactivo</span>
+                              <span className="badge bg-secondary">
+                                Inactivo
+                              </span>
                             )}
                           </td>
                           <td>
-                            <a href="">
+                            <a
+                              href="#"
+                              onClick={() => this.handleStateConfirm(el.id)}
+                            >
                               <i className="fas fa-edit text-dark mr-3"></i>
                             </a>
-                            <a href="">
+                            <a
+                              href="#"
+                              onClick={() => this.handleStateConfirm(el.id)}
+                            >
                               <i className="fas fa-trash text-danger"></i>
                             </a>
                           </td>
